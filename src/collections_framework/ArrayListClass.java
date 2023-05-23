@@ -5,9 +5,11 @@ import java.util.Iterator;
 
 public class ArrayListClass {
 	public static void main(String[] args) {
+		
+		//Create ArrayList
 		ArrayList list=new ArrayList();
 		
-		//To check whether the ArrayList is empty or not
+		//Method to check whether the ArrayList is empty or not
 		boolean arrayListEmpty=list.isEmpty();
 		if(arrayListEmpty) System.out.println("ArrayList is empty");
 		
@@ -79,7 +81,7 @@ public class ArrayListClass {
 		
 		//Remove data from the ArrayList
 		/*
-		 * We Have to overloaded method to removes data from the list
+		 * We Have two overloaded method to removes data from the list
 		 * 1. arrayList.remove(int index);
 		 * 2. arrayList.remove(Object obj);
 		 */
@@ -103,9 +105,21 @@ public class ArrayListClass {
 		System.out.println(list);
 		System.out.println();
 		
+		
+				
 		//Method print the index of elements
 		System.out.println("Printing the index of Nandan");
 		System.out.println(list.indexOf("Nandan"));
+		System.out.println();
+		
+		//Adding a element to array list again
+		list.add("Nandan");
+		list.add("Nandan");
+		System.out.println(list);
+		//Method print the index of elements
+		System.out.println("Printing the index of Nandan");
+		System.out.println(list.indexOf("Nandan")); //Start Comparison from the start of index and return the index of first matching element
+		System.out.println(list.lastIndexOf("Nandan"));//Start Comparision from the start of index and return the index of last matching element
 		System.out.println();
 		
 		//Overloaded method of add() to add value to the given index
@@ -119,6 +133,41 @@ public class ArrayListClass {
 		System.out.println("Replacing the value present in the index 1 with \"Manjunath\"");
 		list.set(1, "Manjunath");
 		System.out.println(list);
+		
+		//Creating ArrayList to store only Integers using generics
+		ArrayList<Integer> intList=new ArrayList<Integer>();
+		intList.add(1);
+//		intList.add('a'); //Gives error
+//		intList.add("Nandan"); //Gives error
+//		intList.add(10.2f); //Gives error
+//		intList.add(10.5); //Gives error
+		intList.add(1);
+		System.out.println();
+		
+		//Add elements of one ArrayList to another ArrayList
+		System.out.println("New ArrayList");
+		ArrayList a1=new ArrayList<>();
+		a1.add(10);
+		a1.add(20);
+		System.out.println(a1);
+		System.out.println();
+		a1.add(list);            //Comment this line and uncomment the below commented line and execute to see the difference
+		System.out.println(a1);
+		
+		System.out.println(a1.size());
+		
+//		a1.addAll(a1);    
+//		System.out.println(a1);
+//		System.out.println(a1.size());
+		
+		//Check whether the AraayList contains the given element or not
+		System.out.println(a1.contains(10));
+		System.out.println(a1.contains(100));
+		
+		//Check whether the ArrayList contains all the elements of given collection.
+		System.out.println(a1.containsAll(list));
+		System.out.println(list.containsAll(a1));
+		
 	}
 
 
